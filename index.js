@@ -1,5 +1,3 @@
-'use strict';
-
 // Create viewer.
 var viewer = new Marzipano.Viewer(document.getElementById('pano'));
 
@@ -20,7 +18,6 @@ var scene = viewer.createScene({
   source: source,
   geometry: geometry,
   view: view,
-  pinFirstLevel: true
 });
 
 // Display scene.
