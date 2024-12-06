@@ -1,4 +1,4 @@
-# Minimal Marzipano Example
+# Marzipano Switch Scene Example
 
 ![screenshot](readme_assets/screenshot.png)
 
