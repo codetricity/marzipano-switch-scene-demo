@@ -10,34 +10,39 @@ var view = new Marzipano.RectilinearView({ yaw: Math.PI }, limiter);
 
 // create array of filenames
 const imageFileNames = [
+    "stanford.jpeg",
+    "carlsbad_1.jpg",
+    "carlsbad_2.jpg",
     "room_5_5k.jpeg",
     "palo_alto_office_11k.jpeg",
-    "honda-insight.jpeg"
+    "honda-insight.jpeg",
+    "audi-car.jpeg"
 ];
 
-// Create scenes
+// Create Marzipano scenes and HTML buttons to hold each Marzipano scene
 var scenes = [];
+const buttons = document.getElementById("buttons");
+
 for (let i = 0; i < imageFileNames.length; i++) {
-    var scene = viewer.createScene({
+
+    // create an unique Marzipano scene for each image
+    let scene = viewer.createScene({
         source: Marzipano.ImageUrlSource.fromString(
           `images/${imageFileNames[i]}`
         ),
         geometry: geometry,
         view: view,
       });
-    scenes.push(scene);
-}
-
-// Display first scene.
-scenes[0].switchTo();
-
-// set up buttons to change scenes
-const buttons = document.getElementById("buttons");
-for (let i = 0; i < scenes.length; i++) {
-    var buttonSwitchImage = document.createElement("button");
+  
+    // create HTML button and switch scene when button is clicked  
+    let buttonSwitchImage = document.createElement("button");
     buttonSwitchImage.textContent = i + 1;
     buttonSwitchImage.addEventListener('click', function() {
-        scenes[i].switchTo();
+        scene.switchTo();
     })
     buttons.appendChild(buttonSwitchImage);
+    // Display first scene.
+    if (i == 0) {scene.switchTo()}
 }
+
+
