@@ -1,6 +1,6 @@
 # Marzipano Switch Scene Example
 
-![screenshot](readme_assets/screenshot.png)
+![screenshot](readme_assets/screen.png)
 
 [live site](https://codetricity.github.io/marzipano-minimal-demo/)
 
