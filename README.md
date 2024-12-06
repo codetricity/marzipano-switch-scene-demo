@@ -2,8 +2,8 @@
 
 ![screenshot](readme_assets/screen.png)
 
-[live site](https://codetricity.github.io/marzipano-minimal-demo/)
+[live site](https://codetricity.github.io/marzipano-switch-scene-demo/)
 
-Minimal example of using open source 360 image viewer from Google.
+Example of switching scenes with open source Marzipano 360 viewer from Google.
 
 [marzipano site](https://www.marzipano.net/)
