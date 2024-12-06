@@ -20,7 +20,6 @@ const imageFileNames = [
 ];
 
 // Create Marzipano scenes and HTML buttons to hold each Marzipano scene
-var scenes = [];
 const buttons = document.getElementById("buttons");
 
 for (let i = 0; i < imageFileNames.length; i++) {
