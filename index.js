@@ -8,29 +8,52 @@ var geometry = new Marzipano.EquirectGeometry([{ width: 4000 }]);
 var limiter = Marzipano.RectilinearView.limit.traditional(1024, 100*Math.PI/180);
 var view = new Marzipano.RectilinearView({ yaw: Math.PI }, limiter);
 
+// create array of filenames
+
+const imageFileNames = [
+    "room_5_5k.jpeg",
+    "palo_alto_office_11k.jpeg",
+    "honda-insight.jpeg"
+];
+
 // Create scene.
+
+var scenes = [];
+
+for (var i = 0; i < imageFileNames.length; i++) {
+    var scene = viewer.createScene({
+        source: Marzipano.ImageUrlSource.fromString(
+          `images/${imageFileNames[i]}`
+        ),
+        geometry: geometry,
+        view: view,
+      });
+    scenes.push(scene);
+}
+
 var scene1 = viewer.createScene({
   source: Marzipano.ImageUrlSource.fromString(
-    "images/room_5_5k.jpeg"
+    `images/${imageFileNames[0]}`
   ),
   geometry: geometry,
   view: view,
 });
 
 const scene2 = viewer.createScene({
-    source: Marzipano.ImageUrlSource.fromString('images/palo_alto_office_11k.jpeg'),
+    source: Marzipano.ImageUrlSource.fromString(`images/${imageFileNames[1]}`),
     geometry: geometry,
     view: view
 });
 
 const scene3 = viewer.createScene({
-    source: Marzipano.ImageUrlSource.fromString('images/honda-insight.jpeg'),
+    source: Marzipano.ImageUrlSource.fromString(`images/${imageFileNames[2]}`),
     geometry: geometry,
     view: view
 });
 
 // Display scene.
 scene1.switchTo();
+
 
 // set up button clicks
 document.getElementById('image1').addEventListener('click', () => {
